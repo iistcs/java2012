@@ -34,9 +34,9 @@ public class Alldatacheck extends HttpServlet {
 			{ 
 				
 				Atrribute atr=new Atrribute();
-				atr.FullName=rs.getString(4);
-				atr.UserName=rs.getNString(2);
-				atr.Password=rs.getString(3);
+				atr.FullName=rs.getString(2);
+				atr.UserName=rs.getString(3);
+				atr.Password=rs.getString(4);
 				/*
 				 * out.print("<tr>"); out.print("<td>"+rs.getString(1)+"</td>");
 				 * out.print("<td>"+rs.getString(2)+"</td>");
