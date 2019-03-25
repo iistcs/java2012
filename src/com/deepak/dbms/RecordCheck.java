@@ -22,16 +22,16 @@ public class RecordCheck extends HttpServlet {
 		String user=request.getParameter("un");
 		try {
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/iistcs","root","dkv@1234");
+		Connection con = DriverManager.getConnection("jdbc:mysql://mysql:3306/iistcs", "user", "password"); // Establish Connection
 		Statement stmt=con.createStatement();
 		String query="Select * from registration Where UserName='"+user+"'";
 		ResultSet rs=stmt.executeQuery(query);
 		while(rs.next())
 		{
 			HttpSession session=request.getSession();
-			session.setAttribute("User", rs.getString(2));
-			session.setAttribute("Pass", rs.getString(3));
-			session.setAttribute("Fname", rs.getString(4));
+			session.setAttribute("User", rs.getString(3));
+			session.setAttribute("Pass", rs.getString(4));
+			session.setAttribute("Fname", rs.getString(2));
 		}
 		
 		rs.close();
