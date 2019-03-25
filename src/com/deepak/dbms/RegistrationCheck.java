@@ -22,9 +22,9 @@ public class RegistrationCheck extends HttpServlet {
 	try {
 	Class.forName("com.mysql.jdbc.Driver");
 	
-	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/iistcs","root","dkv@1234");
+	Connection con = DriverManager.getConnection("jdbc:mysql://mysql:3306/iistcs", "user", "password"); // Establish Connection
 	Statement stmt=con.createStatement();
-	String query="Insert into registration (UserName,Password,FName) values ('"+User+"','"+pass+"','"+FName+"')";
+	String query="Insert into registration (Fname,UserName,Password) values ('"+FName+"','"+User+"','"+pass+"')";
 	stmt.executeUpdate(query);
 	stmt.close();
 	con.close();
