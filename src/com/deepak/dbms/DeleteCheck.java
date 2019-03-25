@@ -21,7 +21,7 @@ public class DeleteCheck extends HttpServlet {
 		try {
 			
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/iistcs","root","dkv@1234");
+			Connection con = DriverManager.getConnection("jdbc:mysql://mysql:3306/iistcs", "user", "password"); // Establish Connection
 			Statement stmt=con.createStatement();
 			String query="Delete from registration where UserName='"+user+"'";
 			int number=stmt.executeUpdate(query);
