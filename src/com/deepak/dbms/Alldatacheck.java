@@ -25,7 +25,7 @@ public class Alldatacheck extends HttpServlet {
 		try {
 			ArrayList<Atrribute> List=new ArrayList<Atrribute>();
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/iistcs","root","dkv@1234");
+			Connection con = DriverManager.getConnection("jdbc:mysql://mysql:3306/iistcs", "user", "password"); // Establish Connection
 			Statement stmt=con.createStatement();
 			String query="Select * from registration";
 			ResultSet rs=stmt.executeQuery(query);
