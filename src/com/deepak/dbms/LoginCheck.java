@@ -24,7 +24,7 @@ public class LoginCheck extends HttpServlet {
 	
 		try {
 			Class.forName("com.mysql.jdbc.Driver"); // Register the driver
-			Connection con = DriverManager.getConnection("jdbc:mysql://mysql:3306/iistcs", "user", "password"); // Establish Connection
+			Connection con = DriverManager.getConnection("jdbc:mysql://mysql:3306/iistcs", "root", "dkv@1234"); // Establish Connection
 			Statement stmt = con.createStatement(); // create statement
 			ResultSet rs = stmt.executeQuery("Select * from registration where UserName='"+user+"' and Password='"+pass+"'"); // execute statement
 			if(rs.next()) {
